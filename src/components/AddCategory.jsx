@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddCategory = ({setCategories}) => {
+export const AddCategory = ({ onNewCategory }) => {
 
   const [inputValue, setInputValue] = useState('Naruto');
 
@@ -15,7 +15,9 @@ export const AddCategory = ({setCategories}) => {
     //validación para que tenga mínimo 5 caracteres
     if( inputValue.trim().length <= 5) return;
 
-    setCategories(categories => [...categories, inputValue])
+    // setCategories(categories => [...categories, inputValue]);
+    onNewCategory( inputValue.trim() );
+    setInputValue('');
   }
   
   return (
