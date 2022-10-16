@@ -13,7 +13,7 @@ export const AddCategory = ({ onNewCategory }) => {
     event.preventDefault();
 
     //validación para que tenga mínimo 5 caracteres
-    if( inputValue.trim().length <= 5) return;
+    if( inputValue.trim().length <= 3) return;
 
     // setCategories(categories => [...categories, inputValue]);
     onNewCategory( inputValue.trim() );
